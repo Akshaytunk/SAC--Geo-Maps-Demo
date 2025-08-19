@@ -1,0 +1,104 @@
+{
+  "id": "com.sap.custom.geomap",
+  "version": "1.1.0",
+  "name": "GeoMap",
+  "description": "GeoMap widget",
+  "newInstancePrefix": "geoMap",
+  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAb1BMVEX///+ZmZl4dXdBPj9hYGGOjpE6ODo8OjwvLC0lISIpJSaMiooyLzH/cjMxLi9GREb/ZSk2MzV9fX1MSks4NjcrJyn/WR9ycnJRT1AtKiv/TRVdXF1ra2v7VCfJyMk+PD6tra+rqqtUUlU0MTNqaGpjxDg2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKhJREFUGNM9z9EagiAMBeDpEGkWNAGhqFTq/Z8xwK/+q7PtZgeg6npEMcBPJ0d1Kmg6ZnFGRZcLESnR7tpoouuVSCPPZYHWee+XxTsrvQeYQrwV97tL5uZigMeoqucTUSnWEVBX4fWaW2BYz1W3bXsLDPldcD8MoYZ3glmMjNbGLJk5igDgnLTGHazdAPo1Gdms2bZXhRmbMuNR5rNWJuX075sMYg57jV94IQ2Xqt1atQAAAABJRU5ErkJggg==",
+  "vendor": "sap",
+  "eula": "",
+  "license": "",
+  "imports": [ "input-controls" ],
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-sap-custom-geomap",
+      "url": "https://tturchioe.github.io/helloworld/geomap_component.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "builder",
+      "tag": "com-sap-custom-geomap-aps",
+      "url": "https://tturchioe.github.io/helloworld/geomap_aps.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "metadata": {
+      "type": "string",
+      "description": "For internal use",
+      "default": ""
+    },
+    "portalurl": {
+      "type": "string",
+      "description": "ESRI Portal URL",
+      "default": ""
+    },
+    "apikey": {
+      "type": "string",
+      "description": "Key",
+      "default": ""  
+   },
+    "servicelevel": {
+      "type": "integer",
+      "description": "Electrical NODISCONT Service Level",
+      "default": 0
+    }
+  },
+  "methods": {
+    "setServiceLevel": {
+      "description": "Set the customer Service Level",
+      "parameters": [
+        {
+          "name": "service",
+          "type": "integer",
+          "description": "ServiceLevel"
+        }
+      ],
+      "body": "this.servicelevel = service;"
+    },
+    "getAPIkey": {   
+      "returnType": "string",
+      "description": "Optional api method - Get API Key",
+      "parameters": [
+      ],
+      "body": "return this.apikey;"
+    },
+    "setAPIkey": {
+      "description": "Set the API Key",
+      "parameters": [
+        {
+          "name": "pkey",
+          "type": "string",
+          "description": "Set New API Key"
+        }
+      ],
+      "body": "this.apikey = pkey;"
+    },
+    "getPortalURL": {
+      "returnType": "string",
+      "description": "Get portal URL",
+      "parameters": [
+      ],
+      "body": "return this.portalurl;"
+    },
+    "setPortalURL": {
+      "description": "Set the Portal URL",
+      "parameters": [
+        {
+          "name": "url",
+          "type": "string",
+          "description": "New Portal URL"
+        }
+      ],
+      "body": "this.portalurl = url;"
+    }
+  },
+  "events": {
+    "onStart": {
+      "description": "onStart events trigger"
+    }
+  }
+}
