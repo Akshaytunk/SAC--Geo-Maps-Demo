@@ -13,14 +13,14 @@
     {
       "kind": "main",
       "tag": "com-sap-custom-geomap",
-      "url": "https://tturchioe.github.io/helloworld/geomap_component.js",
+      "url": "https://github.com/Akshaytunk/SAC--Geo-Maps-Demo/blob/7130ad7bdc837f92a817e8a8c27ac98cde0f555c/component%201.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "builder",
       "tag": "com-sap-custom-geomap-aps",
-      "url": "https://tturchioe.github.io/helloworld/geomap_aps.js",
+      "url": "https://github.com/Akshaytunk/SAC--Geo-Maps-Demo/blob/7130ad7bdc837f92a817e8a8c27ac98cde0f555c/aps.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
