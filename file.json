@@ -41,11 +41,6 @@
       "description": "Key",
       "default": ""
     },
-    "webmapid": {
-      "type": "string",
-      "description": "ESRI Web Map ID",
-      "default": ""
-    },
     "servicelevel": {
       "type": "integer",
       "description": "Electrical NODISCONT Service Level",
@@ -97,23 +92,6 @@
         }
       ],
       "body": "this.portalurl = url;"
-    },
-    "getWebMapId": {
-      "returnType": "string",
-      "description": "Get ESRI Web Map ID",
-      "parameters": [],
-      "body": "return this.webmapid;"
-    },
-    "setWebMapId": {
-      "description": "Set the ESRI Web Map ID",
-      "parameters": [
-        {
-          "name": "id",
-          "type": "string",
-          "description": "New Web Map ID"
-        }
-      ],
-      "body": "this.webmapid = id;"
     }
   },
   "events": {

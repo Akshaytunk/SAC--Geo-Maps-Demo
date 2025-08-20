@@ -101,14 +101,6 @@
             this.setValue("portalurl", value);
         }
 
-        // Web Map ID
-        get webmapid() {
-            return this.getValue("webmapid");
-        }
-        set webmapid(value) {
-            this.setValue("webmapid", value);
-        }
-
         getValue(id) {
             return this._shadowRoot.getElementById(id).value;
         }
@@ -119,8 +111,7 @@
         static get observedAttributes() {
             return [
                 "apikey",
-                "portalurl",
-                "webmapid"
+                "portalurl"
             ];
         }
 
