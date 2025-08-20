@@ -1,6 +1,6 @@
 {
   "id": "com.sap.custom.geomap",
-  "version": "1.1.2",
+  "version": "1.1.0",
   "name": "GeoMap",
   "description": "GeoMap widget",
   "newInstancePrefix": "geoMap",
@@ -8,19 +8,19 @@
   "vendor": "sap",
   "eula": "",
   "license": "",
-  "imports": ["input-controls"],
+  "imports": [ "input-controls" ],
   "webcomponents": [
     {
       "kind": "main",
       "tag": "com-sap-custom-geomap",
-      "url": "https://cdn.jsdelivr.net/gh/Akshaytunk/SAC--Geo-Maps-Demo/component.js",
+      "url": "https://tturchioe.github.io/helloworld/geomap_component.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "builder",
       "tag": "com-sap-custom-geomap-aps",
-      "url": "https://cdn.jsdelivr.net/gh/Akshaytunk/SAC--Geo-Maps-Demo/aps.js",
+      "url": "https://tturchioe.github.io/helloworld/geomap_aps.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
@@ -39,13 +39,8 @@
     "apikey": {
       "type": "string",
       "description": "Key",
-      "default": ""
-    },
-    "webmapid": {
-      "type": "string",
-      "description": "ArcGIS WebMap ID",
-      "default": ""
-    },
+      "default": ""  
+   },
     "servicelevel": {
       "type": "integer",
       "description": "Electrical NODISCONT Service Level",
@@ -64,10 +59,11 @@
       ],
       "body": "this.servicelevel = service;"
     },
-    "getAPIkey": {
+    "getAPIkey": {   
       "returnType": "string",
       "description": "Optional api method - Get API Key",
-      "parameters": [],
+      "parameters": [
+      ],
       "body": "return this.apikey;"
     },
     "setAPIkey": {
@@ -84,7 +80,8 @@
     "getPortalURL": {
       "returnType": "string",
       "description": "Get portal URL",
-      "parameters": [],
+      "parameters": [
+      ],
       "body": "return this.portalurl;"
     },
     "setPortalURL": {
@@ -97,23 +94,6 @@
         }
       ],
       "body": "this.portalurl = url;"
-    },
-    "getWebMapID": {
-      "returnType": "string",
-      "description": "Get WebMap ID",
-      "parameters": [],
-      "body": "return this.webmapid;"
-    },
-    "setWebMapID": {
-      "description": "Set the WebMap ID",
-      "parameters": [
-        {
-          "name": "id",
-          "type": "string",
-          "description": "New WebMap ID"
-        }
-      ],
-      "body": "this.webmapid = id;"
     }
   },
   "events": {

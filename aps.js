@@ -1,6 +1,4 @@
 (function () {
-    console.log("APS.js Loaded - GeoMap properties available ✅");
-
     var gPassedAPIkey;
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
@@ -25,6 +23,7 @@
               margin: 6px 3px 6px 0;
               vertical-align: middle;
           }
+          
       </style>
       <form id="form" autocomplete="off">
         <fieldset> 
@@ -35,13 +34,10 @@
               <td><input id="apikey" name="apikey" type="text"></td>
             </tr>
             <tr>
-              <td><label for="portalurl">Portal URL:</label></td>
+              <td><label for="portalurl">URL:</label></td>
               <td><input id="portalurl" name="portalurl" type="text"></td>
             </tr>
-            <tr>
-              <td><label for="webmapid">WebMap ID:</label></td>
-              <td><input id="webmapid" name="webmapid" type="text"></td>
-            </tr>
+            
           </table>
         </fieldset>
         <button type="submit" hidden>Submit</button>
@@ -59,20 +55,22 @@
             form.addEventListener("change", this._change.bind(this));
         }
 
+        connectedCallback() {
+        }
+
         _submit(e) {
             e.preventDefault();
             let properties = {};
             for (let name of restAPIAps.observedAttributes) {
                 properties[name] = this[name];
             }
+            console.log(properties);
             this._firePropertiesChanged(properties);
             return false;
         }
-
         _change(e) {
             this._changeProperty(e.target.name);
         }
-
         _changeProperty(name) {
             let properties = {};
             properties[name] = this[name];
@@ -81,15 +79,19 @@
 
         _firePropertiesChanged(properties) {
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                detail: { properties }
+                detail: {
+                    properties: properties
+                }
             }));
         }
 
         get apikey() {
             return this.getValue("apikey");
+            
         }
         set apikey(value) {
             this.setValue("apikey", value);
+            
         }
 
         get portalurl() {
@@ -97,32 +99,28 @@
         }
         set portalurl(value) {
             this.setValue("portalurl", value);
-        }
-
-        get webmapid() {
-            return this.getValue("webmapid");
-        }
-        set webmapid(value) {
-            this.setValue("webmapid", value);
-        }
+        
+            
+        } 
+        
 
         getValue(id) {
             return this._shadowRoot.getElementById(id).value;
         }
         setValue(id, value) {
-            this._shadowRoot.getElementById(id).value = value || "";
+          console.log(id +":" + value);
+            this._shadowRoot.getElementById(id).value = value;
         }
 
         static get observedAttributes() {
             return [
                 "apikey",
-                "portalurl",
-                "webmapid"
+                "portalurl"
             ];
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            if (oldValue !== newValue) {
+            if (oldValue != newValue) {
                 this[name] = newValue;
             }
         }
