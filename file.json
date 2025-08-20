@@ -8,7 +8,7 @@
   "vendor": "sap",
   "eula": "",
   "license": "",
-  "imports": [ "input-controls" ],
+  "imports": ["input-controls"],
   "webcomponents": [
     {
       "kind": "main",
@@ -17,7 +17,6 @@
       "integrity": "",
       "ignoreIntegrity": true
     },
-
     {
       "kind": "builder",
       "tag": "com-sap-custom-geomap-aps",
@@ -26,7 +25,6 @@
       "ignoreIntegrity": true
     }
   ],
-  
   "properties": {
     "metadata": {
       "type": "string",
@@ -41,8 +39,13 @@
     "apikey": {
       "type": "string",
       "description": "Key",
-      "default": ""  
-   },
+      "default": ""
+    },
+    "webmapid": {
+      "type": "string",
+      "description": "ESRI Web Map ID",
+      "default": ""
+    },
     "servicelevel": {
       "type": "integer",
       "description": "Electrical NODISCONT Service Level",
@@ -61,11 +64,10 @@
       ],
       "body": "this.servicelevel = service;"
     },
-    "getAPIkey": {   
+    "getAPIkey": {
       "returnType": "string",
       "description": "Optional api method - Get API Key",
-      "parameters": [
-      ],
+      "parameters": [],
       "body": "return this.apikey;"
     },
     "setAPIkey": {
@@ -82,8 +84,7 @@
     "getPortalURL": {
       "returnType": "string",
       "description": "Get portal URL",
-      "parameters": [
-      ],
+      "parameters": [],
       "body": "return this.portalurl;"
     },
     "setPortalURL": {
@@ -96,6 +97,23 @@
         }
       ],
       "body": "this.portalurl = url;"
+    },
+    "getWebMapId": {
+      "returnType": "string",
+      "description": "Get ESRI Web Map ID",
+      "parameters": [],
+      "body": "return this.webmapid;"
+    },
+    "setWebMapId": {
+      "description": "Set the ESRI Web Map ID",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "New Web Map ID"
+        }
+      ],
+      "body": "this.webmapid = id;"
     }
   },
   "events": {
