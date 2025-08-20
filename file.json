@@ -20,7 +20,7 @@
     {
       "kind": "builder",
       "tag": "com-sap-custom-geomap-aps",
-      "url": "https://tturchioe.github.io/helloworld/geomap_aps.js",
+      "url": "https://raw.githubusercontent.com/Akshaytunk/SAC--Geo-Maps-Demo/refs/heads/main/aps.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
