@@ -1,4 +1,6 @@
 (function () {
+    console.log("APS.js Loaded - GeoMap properties available ✅");
+
     var gPassedAPIkey;
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
