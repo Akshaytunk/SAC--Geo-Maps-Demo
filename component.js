@@ -27,7 +27,7 @@
     `;
 
     function applyDefinitionQuery() {
-        var svcLyr = gMyWebmap.findLayerById('3ddc5954d2d14281ba53eef8a58cf1d4'); 
+        var svcLyr = gMyWebmap.findLayerById('2d96209ad9694a98bd980a5638e26211'); 
         console.log("Layer is", svcLyr);
 
         if (!svcLyr) return;
@@ -105,7 +105,7 @@
                 // Use dynamic Web Map ID from property, fallback to default if missing
                 const webmap = new WebMap({
                     portalItem: {
-                        id: gPassedWebMapId || "3ddc5954d2d14281ba53eef8a58cf1d4"
+                        id: gPassedWebMapId || "2d96209ad9694a98bd980a5638e26211"
                     }
                 });
 
