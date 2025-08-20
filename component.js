@@ -287,9 +287,9 @@
 
     //SHARED FUNCTION: reuse between widgets
     //function(src, callback) {
-    let customElementScripts = window.sessionStorage.getItem("customElementScripts") || [];
+    let customElementScripts = JSON.parse(window.sessionStorage.getItem("customElementScripts") || "[]");
     let scriptStatus = customElementScripts.find(function(element) {
-        return element.src == scriptSrc;
+    return element.src === scriptSrc;
     });
 
     if (scriptStatus) {
