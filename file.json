@@ -17,6 +17,7 @@
       "integrity": "",
       "ignoreIntegrity": true
     },
+
     {
       "kind": "builder",
       "tag": "com-sap-custom-geomap-aps",
@@ -25,6 +26,7 @@
       "ignoreIntegrity": true
     }
   ],
+  
   "properties": {
     "metadata": {
       "type": "string",
