@@ -1,7 +1,8 @@
 (function() {
     let template = document.createElement("template");
-    var gPassedPortalURL;
+    var gPassedPortalURL = "https://tek-analytics.maps.arcgis.com";  // Your portal URL
     var gPassedAPIkey;
+    var gPassedWebmapId = "87c95b1486bc4abf9f47431c81edff57"; // Default Esri sample
 
     template.innerHTML = `
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
@@ -30,15 +31,12 @@
             ], function(esriConfig, WebMap, MapView, Point, geometryEngine, Graphic) {
 
                 // Set ESRI portal and API key
-                esriConfig.portalUrl = gPassedPortalURL || "https://tek-analytics.maps.arcgis.com/";
-                esriConfig.apiKey = gPassedAPIkey || "AAPTxy8BH1VEsoebNVZXo8HurEKqPv8K_9et0IXXw_af7Z0b5Uy6YPdhX2h7EIt287zHlXG4DNI8-No37XwysqKJAw-Vs1EI9b1KNfAksrdWLg_LkODEEX3zeNMUwRL0fHCKJWEA_4wrozSwJxCbzyHAtgph9AbXMOGZFzAvG3zqNWLIy0Z1fHKCYyoTJ1AW4EEOzNS-VH1rR-z4LaxQ-k3POB97T9NbQ6tTvANEMYTQFuo.AT1_vjvA920Q";
+                esriConfig.portalUrl = gPassedPortalURL;
+                esriConfig.apiKey = gPassedAPIkey;
 
-                // Load a sample webmap (can be replaced with your own)
+                // Load webmap (configurable)
                 const webmap = new WebMap({
-                    portalItem: {
-                        id: "87c95b1486bc4abf9f47431c81edff57"
- 
-                    }
+                    portalItem: { id: gPassedWebmapId }
                 });
 
                 const view = new MapView({
@@ -105,12 +103,17 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             if ("portalurl" in changedProperties) {
                 this.$portalurl = changedProperties["portalurl"];
-                gPassedPortalURL = this.$portalurl;
+                gPassedPortalURL = this.$portalurl || "https://tek-analytics.maps.arcgis.com";
             }
 
             if ("apikey" in changedProperties) {
                 this.$apikey = changedProperties["apikey"];
                 gPassedAPIkey = this.$apikey;
+            }
+
+            if ("webmapid" in changedProperties) {
+                this.$webmapid = changedProperties["webmapid"];
+                gPassedWebmapId = this.$webmapid || "87c95b1486bc4abf9f47431c81edff57";
             }
         }
     }
