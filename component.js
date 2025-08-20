@@ -21,33 +21,39 @@
             this._props = {};
         }
 
+        static get properties() {   // 🔑 Add this section
+            return {
+                apikey: {
+                    type: "string"
+                },
+                portalurl: {
+                    type: "string"
+                },
+                webmapid: {          // ✅ Declare webmapid
+                    type: "string"
+                }
+            };
+        }
+
         async renderMap() {
             if (!this._props.apikey || !this._props.portalurl || !this._props.webmapid) {
                 console.warn("GeoMap: Missing portalurl, apikey or webmapid");
                 return;
             }
 
-            // Load ArcGIS API
             require([
                 "esri/config",
                 "esri/portal/Portal",
                 "esri/WebMap",
                 "esri/views/MapView"
             ], (esriConfig, Portal, WebMap, MapView) => {
-
                 esriConfig.apiKey = this._props.apikey;
-
-                // Set the portal (your org)
                 esriConfig.portalUrl = this._props.portalurl;
 
-                // Create WebMap
                 const webmap = new WebMap({
-                    portalItem: {
-                        id: this._props.webmapid
-                    }
+                    portalItem: { id: this._props.webmapid }
                 });
 
-                // Attach MapView
                 new MapView({
                     container: this._shadowRoot.getElementById("mapViewDiv"),
                     map: webmap
@@ -55,12 +61,10 @@
             });
         }
 
-        // Called when widget is created in SAC
         onCustomWidgetBeforeUpdate(changedProperties) {
             this._props = { ...this._props, ...changedProperties };
         }
 
-        // Called when widget properties are changed in SAC
         onCustomWidgetAfterUpdate(changedProperties) {
             this._props = { ...this._props, ...changedProperties };
             this.renderMap();
