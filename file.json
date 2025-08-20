@@ -13,14 +13,14 @@
     {
       "kind": "main",
       "tag": "com-sap-custom-geomap",
-      "url": "https://raw.githubusercontent.com/Akshaytunk/SAC--Geo-Maps-Demo/refs/heads/main/component.js",
+      "url": "https://cdn.jsdelivr.net/gh/Akshaytunk/SAC--Geo-Maps-Demo/component.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "builder",
       "tag": "com-sap-custom-geomap-aps",
-      "url": "https://raw.githubusercontent.com/Akshaytunk/SAC--Geo-Maps-Demo/refs/heads/main/aps.js",
+      "url": "https://cdn.jsdelivr.net/gh/Akshaytunk/SAC--Geo-Maps-Demo/aps.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
