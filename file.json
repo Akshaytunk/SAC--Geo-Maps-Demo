@@ -1,6 +1,6 @@
 {
   "id": "com.sap.custom.geomap",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "GeoMap",
   "description": "GeoMap widget",
   "newInstancePrefix": "geoMap",
@@ -34,17 +34,17 @@
     "portalurl": {
       "type": "string",
       "description": "ESRI Portal URL",
-      "default": "https://tek-analytics.maps.arcgis.com"
+      "default": ""
     },
     "apikey": {
       "type": "string",
-      "description": "ESRI API Key",
+      "description": "Key",
       "default": ""
     },
     "webmapid": {
       "type": "string",
-      "description": "ArcGIS Web Map ID",
-      "default": "87c95b1486bc4abf9f47431c81edff57"
+      "description": "ArcGIS WebMap ID",
+      "default": ""
     },
     "servicelevel": {
       "type": "integer",
@@ -98,22 +98,22 @@
       ],
       "body": "this.portalurl = url;"
     },
-    "getWebMapId": {
+    "getWebMapID": {
       "returnType": "string",
-      "description": "Get Web Map ID",
+      "description": "Get WebMap ID",
       "parameters": [],
       "body": "return this.webmapid;"
     },
-    "setWebMapId": {
-      "description": "Set the Web Map ID",
+    "setWebMapID": {
+      "description": "Set the WebMap ID",
       "parameters": [
         {
-          "name": "wid",
+          "name": "id",
           "type": "string",
-          "description": "New Web Map ID"
+          "description": "New WebMap ID"
         }
       ],
-      "body": "this.webmapid = wid;"
+      "body": "this.webmapid = id;"
     }
   },
   "events": {
