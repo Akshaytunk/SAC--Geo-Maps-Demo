@@ -105,7 +105,7 @@
                 // Use dynamic Web Map ID from property, fallback to default if missing
                 const webmap = new WebMap({
                     portalItem: {
-                        id: gPassedWebMapId || "87c95b1486bc4abf9f47431c81edff57"
+                        id: gPassedWebMapId || "54610420d90240dabb39a92939e57048"
                     }
                 });
 
