@@ -8,7 +8,7 @@
   "vendor": "sap",
   "eula": "",
   "license": "",
-  "imports": [ "input-controls" ],
+  "imports": ["input-controls"],
   "webcomponents": [
     {
       "kind": "main",
@@ -34,13 +34,18 @@
     "portalurl": {
       "type": "string",
       "description": "ESRI Portal URL",
-      "default": ""
+      "default": "https://tek-analytics.maps.arcgis.com"
     },
     "apikey": {
       "type": "string",
-      "description": "Key",
-      "default": ""  
-   },
+      "description": "ESRI API Key",
+      "default": ""
+    },
+    "webmapid": {
+      "type": "string",
+      "description": "ArcGIS Web Map ID",
+      "default": "87c95b1486bc4abf9f47431c81edff57"
+    },
     "servicelevel": {
       "type": "integer",
       "description": "Electrical NODISCONT Service Level",
@@ -59,11 +64,10 @@
       ],
       "body": "this.servicelevel = service;"
     },
-    "getAPIkey": {   
+    "getAPIkey": {
       "returnType": "string",
       "description": "Optional api method - Get API Key",
-      "parameters": [
-      ],
+      "parameters": [],
       "body": "return this.apikey;"
     },
     "setAPIkey": {
@@ -80,8 +84,7 @@
     "getPortalURL": {
       "returnType": "string",
       "description": "Get portal URL",
-      "parameters": [
-      ],
+      "parameters": [],
       "body": "return this.portalurl;"
     },
     "setPortalURL": {
@@ -94,6 +97,23 @@
         }
       ],
       "body": "this.portalurl = url;"
+    },
+    "getWebMapId": {
+      "returnType": "string",
+      "description": "Get Web Map ID",
+      "parameters": [],
+      "body": "return this.webmapid;"
+    },
+    "setWebMapId": {
+      "description": "Set the Web Map ID",
+      "parameters": [
+        {
+          "name": "wid",
+          "type": "string",
+          "description": "New Web Map ID"
+        }
+      ],
+      "body": "this.webmapid = wid;"
     }
   },
   "events": {
